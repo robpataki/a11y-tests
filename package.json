@@ -1,5 +1,5 @@
 {
-  "name": "nin-a11y",
+  "name": "a11y-tests",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

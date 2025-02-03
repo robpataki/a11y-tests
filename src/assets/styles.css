@@ -1,0 +1,68 @@
+:root {
+  --focus-inner-border-color: #262626;
+  --focus-outer-border-color: #ffe49c;
+  --table-border-color: #ff4c47;
+}
+
+*:focus-visible {
+  transition: none;
+  outline-color: var(--focus-inner-border-color);
+  outline-style: solid;
+  outline-offset: 0;
+  outline-width: 0.3rem;
+  border-radius: 0;
+  background-color: var(--focus-outer-border-color);
+  color: var(--focus-inner-border-color) !important;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    outline-color: var(--focus-outer-border-color);
+    outline-style: solid;
+    outline-offset: 0.15rem;
+    outline-width: 0.15rem;
+    border-radius: inherit;
+  }
+}
+
+.text {
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 1;
+  font-family: "Arial MT Pro";
+  font-weight: 800;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  background: black;
+  border-spacing: 0;
+
+  &,
+  tr,
+  th,
+  td {
+    padding: 2rem 0;
+  }
+
+  tr {
+    position: relative;
+  }
+
+  tbody tr::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--table-border-color);
+  }
+}

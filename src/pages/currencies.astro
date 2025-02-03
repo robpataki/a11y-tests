@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const currencyMessages = [
+  {
+    name: "Czech koruna",
+    short: "1,738.29 Kč",
+    long: "+ 1,631.00 Kč per person, per flight",
+    detailed: "1 x 1,580.24 Kč",
+  },
+  {
+    name: "Danish krone",
+    short: "515.00 kr.",
+    long: "+ 418.00 kr. per person, per flight",
+    detailed: "1 x 468.17 kr.",
+  },
+  {
+    name: "Euros",
+    short: "62.74 €",
+    long: "+ 68.98 € per person, per flight",
+    detailed: "1 x 62.74 €",
+  },
+  {
+    name: "Hungarian forint",
+    short: "67,954 Ft",
+    long: "+ 20,590 Ft per person, per flight",
+    detailed: "1 x 25,543 Ft",
+  },
+  {
+    name: "Moroccan dirham",
+    short: "د.م.‏720",
+    long: "+ د.م.‏691 per person, per flight",
+    detailed: "1 x د.م.‏654",
+  },
+  {
+    name: "Polish złoty",
+    short: "46.98 zł",
+    long: "+ 46.98 zł per person, per flight",
+    detailed: "1 x 46.98 zł",
+  },
+  {
+    name: "Swedish krona",
+    short: "kr793",
+    long: "+ kr566 per person, per flight",
+    detailed: "1 x kr793",
+  },
+  {
+    name: "Swiss franc",
+    short: "CHF 46.98",
+    long: "+ CHF 46.98 per person, per flight",
+    detailed: "1 x CHF 46.98",
+  },
+  {
+    name: "British pound sterling",
+    short: "£46.98",
+    long: "+ £46.98 per person, per flight",
+    detailed: "1 x £46.98",
+  },
+  {
+    name: "United States dollar",
+    short: "$46.98",
+    long: "+ $46.98 per person, per flight",
+    detailed: "1 x $46.98",
+  },
+];
+---
+
+<style>
+  .currency-table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    max-width: 50vw;
+    position: relative;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    caption {
+      text-align: left;
+      font-size: 125%;
+      font-weight: bold;
+    }
+
+    caption,
+    th,
+    td {
+      padding: 1rem;
+    }
+
+    td {
+      border-bottom: 1px solid purple;
+    }
+
+    tr:nth-child(2n + 2) {
+      td {
+        background: rgb(0 0 0 / 5%);
+      }
+    }
+  }
+</style>
+
+<BaseLayout title="Currencies">
+  <table class="currency-table">
+    <caption>Currencies</caption>
+    <thead>
+      <tr
+        ><th>Name</th><th>Short example</th><th>Long example</th><th
+          >Detailed example</th
+        ></tr
+      >
+    </thead>
+    {
+      currencyMessages.map((currencyMessage) => (
+        <tr>
+          <td>{currencyMessage.name}</td>
+          <td>{currencyMessage.short}</td>
+          <td>{currencyMessage.long}</td>
+          <td>{currencyMessage.detailed}</td>
+        </tr>
+      ))
+    }
+  </table>
+</BaseLayout>
